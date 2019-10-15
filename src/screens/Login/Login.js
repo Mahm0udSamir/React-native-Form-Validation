@@ -37,6 +37,7 @@ class Login extends Component {
     toHomePage = () => {
         loginServise({email: this.state.controls.email.value, password: this.state.controls.password.value})
             .then(() => {
+                console.log('toHomePage')
                 this.props.navigation.navigate('Home');
             })
     }

@@ -6,7 +6,7 @@ const registerServise = (authData) => {
     formData.append('password', authData.password);
     formData.append('password_confirmation', authData.password_confirmation);
 
-    console.log(authData)
+  console.log('authData ', authData)
     return new Promise(resolve => {
 
         return fetch(url, {
@@ -20,11 +20,16 @@ const registerServise = (authData) => {
         .then(res => res.json())
         .then(parsRes => {
           if (parsRes.errors) {
-            alert(parsRes.errors.account[0]);
+            let msg = '';
+            for (const i in parsRes.errors) {
+              msg += parsRes.errors[i] + '\n';
+            }
+           
+            alert(msg);
           } else { 
+            console.log('parsRes ', parsRes);
             resolve()
           }
-          console.log(parsRes);
         })
     })
 

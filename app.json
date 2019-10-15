@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Dtag Task",
+    "name": "Task",
     "slug": "loginApp",
     "privacy": "public",
     "sdkVersion": "35.0.0",
@@ -25,6 +25,14 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "ca.brentvatne.growlerprowler",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDUls2fj2LLh3vnIpQ2DU_MhjPHIauGtZU"
+        }
+      }
     }
   }
 }

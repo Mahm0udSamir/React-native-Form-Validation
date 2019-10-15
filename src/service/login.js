@@ -18,7 +18,11 @@ const loginServise = (authData) => {
         .then(res => res.json())
         .then(parsRes => {
           if (parsRes.errors) {
-            alert(parsRes.errors.account[0]);
+            let msg = '';
+            for (const i in parsRes.errors) {
+              msg += parsRes.errors[i] + '\n';
+            }
+            alert(msg);
           } else { 
             resolve()
           }
